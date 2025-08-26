@@ -1,30 +1,30 @@
 // Nome do repositório
 string name = "TugaFlix";
 
-// URL base do site (não precisa ser real para teste)
-string baseUrl = "https://www.tugaflix.com/";
+var categories = new List<string> { "Filmes" };
 
-// Lista de categorias
-var categories = new List<string> {
-    "Filmes"
-};
-
-// Função para obter filmes de uma categoria
 List<Filme> GetFilmes(string categoria) {
     var filmes = new List<Filme>();
 
-    // Filme de exemplo
-    filmes.Add(new Filme {
-        titulo = "Filme Exemplo",
-        url = baseUrl + "filme-exemplo",
-        imagem = baseUrl + "img/filme-exemplo.jpg",
-        descricao = "Este é um filme de exemplo para testar o TLN."
-    });
+    if (categoria == "Filmes") {
+        filmes.Add(new Filme {
+            titulo = "Deadpool & Wolverine",
+            url = "https://streamtape.com/v/P3keeJa20qt0wQZ",
+            imagem = "https://image.tmdb.org/t/p/w220_and_h330_bestv2//8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+            descricao = "Deadpool e Wolverine numa aventura cheia de ação e humor ácido."
+        });
+
+        filmes.Add(new Filme {
+            titulo = "Homem-Aranha: Através do Multiverso",
+            url = "https://streamtape.com/v/Vr8OLp4wd3sK6M4",  
+            imagem = "https://image.tmdb.org/t/p/w220_and_h330_bestv2//8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+            descricao = "Miles Morales enfrenta novas aventuras atravessando múltiplos universos."
+        });
+    }
 
     return filmes;
 }
 
-// Classe Filme
 class Filme {
     public string titulo;
     public string url;
