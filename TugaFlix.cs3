@@ -1,0 +1,36 @@
+// Nome do repositório
+string name = "TugaFlix";
+
+// URL principal do site
+string baseUrl = "https://www.tugaflix.com/";
+
+// Categorias do TugaFlix
+var categories = new List<string> {
+    "Filmes",
+    "Séries",
+    "Animação"
+};
+
+// Função que retorna os filmes de uma categoria
+List<Filme> GetFilmes(string categoria) {
+    var filmes = new List<Filme>();
+
+    // Função de exemplo - TLN precisa interpretar os links do site
+    // Aqui você pode adaptar para buscar diretamente do TugaFlix usando seletores
+    filmes.Add(new Filme {
+        titulo = categoria + " Exemplo",
+        url = baseUrl + categoria.ToLower() + "/exemplo",
+        imagem = baseUrl + "img/exemplo.jpg",
+        descricao = "Filme de exemplo da categoria " + categoria
+    });
+
+    return filmes;
+}
+
+// Classe de filmes
+class Filme {
+    public string titulo;
+    public string url;
+    public string imagem;
+    public string descricao;
+}
